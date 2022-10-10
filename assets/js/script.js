@@ -224,6 +224,7 @@ clearScores.addEventListener('click', function(event) {
 // GAME OVER SCREEN
 function gameOver() {
     gameEnder = true;
+    startButton.setAttribute("style", "display:none");
     if (!didgameStart) {
        renderhighScores();
        return; 
@@ -250,9 +251,17 @@ function gameOver() {
     }
     )}
 
+// SORT SCORES HIGHEST -> LOWEST
+function sorthighScores() {
+    for (let i = scores.length -1; i > 0; i--) {
+        scores.sort(function(a, b){return b.score - a.score});
+      }
+}
+
 // RENDERS THE SCORES ON THE SCORE PAGE
 function renderhighScores() {
     highScores.innerHTML = "";
+    sorthighScores();
     for (var i = 0; i < scores.length; i++) {
         var score = scores[i];
         var li = document.createElement("li");
@@ -283,7 +292,7 @@ function gameStart() {
 function init() {
     var storedScores = JSON.parse(localStorage.getItem("scores"))
     if (storedScores !== null) {
-        scores = storedScores;
+            scores = storedScores;
     }
 }
 
