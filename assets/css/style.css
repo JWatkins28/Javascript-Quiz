@@ -5,6 +5,7 @@
     --answerhover: #C34F5A; 
 }
 
+/* I didn't want the text selectable for anything on the page */
 * {
     user-select: none;
 }
@@ -22,12 +23,6 @@ h2 {
     font-size: 150%;
 }
 
-body {
-    display: flex;
-    flex-direction:column;
-    
-}
-
 header {
     display: flex;
     flex-direction: row;
@@ -40,6 +35,23 @@ header {
     color: white;
 }
 
+header > h4 {
+    justify-content: space-between;
+}
+
+body {
+    display: flex;
+    flex-direction:column;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--backgroundc);
+    justify-content:center;
+    height:100%;
+}
 
 ul {
     display: flex;
@@ -47,40 +59,6 @@ ul {
     align-items: center;
     justify-content: center;
     padding: 50px 0 50px 0px;
-}
-
-#question-list {
-    display:none;
-}
-
-#score-sub {
-    width: fit-content;
-    height: auto;
-    margin: 0px;
-}
-
-#score-form {
-    display:none;
-}
-
-#high-score-button:hover {
-    color: black;
-    text-shadow: 0 0 15px white, 0 0 25px #b9c6ae;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-#high-scores > li {
-    padding: 3px;
-    margin: 3px; 
-    line-height: 1.5;
-    border: 1px dotted black;
-    border-radius: 5px 5px 5px 5px;
-    width: 150px;
-    text-align: center;
-    background-color: green;
-    color: white;
-    user-select: none;
 }
 
 label {
@@ -96,19 +74,6 @@ button {
     margin: 10px 0;
 }
 
-#start-button {
-    padding: 5px;
-    background-color: var(--answerbg);
-    color: white;
-    font-size: 26px;
-    border-radius: 5px; 
-}
-
-#start-button:hover {
-    background-color: var(--answerhover);  
-    color: #fffdd0;
-}
-
 button:hover {
     background-color: var(--answerhover);
     color: #fffdd0;
@@ -117,7 +82,9 @@ button:hover {
     cursor: pointer;
 }
 
-
+section > h2 {
+    width: fit-content;
+}
 
 .listEl {
     padding: 3px;
@@ -139,6 +106,53 @@ button:hover {
     cursor: pointer;
 }
 
+#question-list {
+    display:none;
+}
+
+#score-sub {
+    width: fit-content;
+    height: auto;
+    margin: 0px;
+}
+
+#score-form {
+    display:none;
+}
+
+#high-score-button:hover {
+    color: var(--answerhover);
+    text-shadow: 0 0 15px white, 0 0 25px #b9c6ae;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#high-scores > li {
+    padding: 3px;
+    margin: 3px; 
+    line-height: 1.5;
+    border: 1px dotted black;
+    border-radius: 5px 5px 5px 5px;
+    width: 150px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    user-select: none;
+}
+
+#start-button {
+    padding: 5px;
+    background-color: var(--answerbg);
+    color: white;
+    font-size: 26px;
+    border-radius: 5px; 
+}
+
+#start-button:hover {
+    background-color: var(--answerhover);  
+    color: #fffdd0;
+}
+
 #game-board {
     width: 70%;
     display:flex;
@@ -148,14 +162,6 @@ button:hover {
     min-height: 600px;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--backgroundc);
-    justify-content:center;
-    height:100%;
-}
-
 #score {
     width:100%;
     justify-content: center;
@@ -163,14 +169,6 @@ main {
 
 #timer-text {
     align-self: flex-end;
-}
-
-header > h4 {
-    justify-content: space-between;
-}
-
-section > h2 {
-    width: fit-content;
 }
 
 #restart-button {
