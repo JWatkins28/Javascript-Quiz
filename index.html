@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="time-replay-sect">
+        <div id="high-score-button"><h4>High Scores</h4></div>
+        <div><h4 id="timer-text"></h4></div>
+    </header>
+
+    <main>
+        <section id="game-board">
+            
+            <h1 id="isitcorrect">Javascript Quiz</h1>
+            <button id="start-button">Start The Game!</button>
+            <form id="score-form">
+                <input type="text" id="score-submission" placeholder="Enter Your Initials">
+                <button id="score-sub">Submit!</button>
+            </form>
+            <ul id="question-list">
+                <h2 id="question-text"></h2>
+                <li id="a1" class="listEl"></li>
+                <li id="a2" class="listEl"></li>
+                <li id="a3" class="listEl"></li>
+                <li id="a4" class="listEl"></li>
+            </ul>
+                
+            <ul id="high-scores"></ul>
+            <button id="clear-scores">Clear Scores</button>
+            <button id="restart-button">Play Again?</button>
+        </section> 
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
