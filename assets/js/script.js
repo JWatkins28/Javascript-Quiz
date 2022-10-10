@@ -1,3 +1,4 @@
+// ELEMENT SELECTORS
 let timerText = document.getElementById('timer-text');
 let startButton = document.getElementById('start-button');
 let restartButton = document.getElementById('restart-button');
@@ -11,14 +12,14 @@ let clearScores = document.getElementById('clear-scores');
 let scoreName = document.querySelector('#score-submission');
 let highScores = document.querySelector('#high-scores');
 
+// GLOBAL VARIABLES FOR FUNCTIONS
 let playerScore = 0;
-
 let gameEnder = false;
 let didgameStart = false;
-
 var scores = [];
 var timeLeft = 60;
 
+// VARIABLES FOR THE QUESTIONS AND ANSWERS
 var qT = document.getElementById("question-text");
 var a1 = document.getElementById("a1");
 var a2 = document.getElementById("a2");
@@ -150,8 +151,7 @@ var questions = [
 ];
 
 
-
-// TIMER
+// QUIZ TIMER
 function timer() {
     
     timerText.textContent = "Time Remaining: " + timeLeft;
@@ -173,7 +173,7 @@ startButton.addEventListener("click", function(event) {
     timer();
 });
 
-// RESTART BUTTON (reloads)
+// RESTART BUTTON 
 restartButton.addEventListener("click", function(event) {
     event.preventDefault();
     window.location.reload();
@@ -272,12 +272,14 @@ function storeScores() {
     localStorage.setItem('scores', JSON.stringify(scores));
 }
 
+// STARTS THE GAME
 function gameStart() {
     didgameStart = true;
     questionList.setAttribute("style", "display: flex");
     questionChooser();
 }
 
+// INITIAL SCRIPT TO GRAB THE LOCAL STORAGE
 function init() {
     var storedScores = JSON.parse(localStorage.getItem("scores"))
     if (storedScores !== null) {
